@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <title>rock-paper-sCissors</title>
+</head>
+<body>
+<script>
+
+var hand = [ 'rock', 'paper', 'scissors' ];
+function computerPlay() {
+    selection = Math.floor(Math.random() * 3) ;
+    return hand[selection];
+    }
+
+// check that the computer returns a valid choice
+//console.log(computerPlay());
+
+var playerTurn = prompt('Battle!').toLowerCase();
+
+//console.log(playerTurn);
+
+//console.log(checkSelection);
+function letsPlay() {
+    opponentTurn = computerPlay();
+    checkSelection = hand.includes(playerTurn);
+    if (checkSelection == false){
+    console.log('Play a valid hand');
+    } else if (playerTurn == opponentTurn){
+        console.log('Computer plays '+opponentTurn+'. Draw.')
+    } else if (playerTurn == 'rock' && opponentTurn == 'paper'){
+        console.log('Computer plays '+opponentTurn+'. You lose..')
+    } else if (playerTurn == 'paper' && opponentTurn == 'scissors'){
+        console.log('Computer plays '+opponentTurn+'. You lose..')
+    } else if (playerTurn == 'scissors' && opponentTurn == 'rock'){
+        console.log('Computer plays '+opponentTurn+'. You lose..')
+    } else {
+        console.log('Computer plays '+opponentTurn+'. You win!')
+    }
+}
+console.log(letsPlay());
+</script>
+</body>
+</html>
